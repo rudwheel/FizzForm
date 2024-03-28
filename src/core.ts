@@ -41,6 +41,11 @@ export function generateRandomList(
     console.log("les valeurs de min et max sont inversées");
     return [];
   }
+  // Vérifie si min est égal à max, auquel cas une erreur est signalée et une liste vide est retournée.
+  if (min === max) {
+    console.log("les valeurs de min et max doivent être différentes");
+    return [];
+  }
   // Utilise Array.from pour générer une liste de la taille spécifiée.
   // Pour chaque élément de la liste, une fonction génératrice est utilisée pour produire un nombre aléatoire dans l'intervalle [min, max].
   return Array.from(

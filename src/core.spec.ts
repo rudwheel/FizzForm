@@ -122,18 +122,37 @@ describe("generateRandomList", () => {
   describe("generateRandomList", () => {
     it("should generate numbers within the exact range", () => {
       // Arrange
+      // Défini la taille de la liste à générer et la plage de nombres
       const size = 1000;
       const min = 10;
       const max = 20;
 
       // Act
+      // Générez une liste de nombres aléatoires
       const result = generateRandomList(size, min, max);
 
       // Assert
+      // Trouve le minimum et le maximum dans la liste générée
       const actualMin = Math.min(...result);
       const actualMax = Math.max(...result);
+      // Vérifie si le minimum et le maximum sont égaux aux valeurs définies
       expect(actualMin).toBe(min);
       expect(actualMax).toBe(max);
+    });
+    describe("generateRandomList", () => {
+      it("should return an empty list and log an error when min is equal to max", () => {
+        // Arrange
+        const consoleSpy = jest.spyOn(console, "log");
+
+        // Act
+        const result = generateRandomList(10, 5, 5);
+
+        // Assert
+        expect(result).toEqual([]);
+        expect(consoleSpy).toHaveBeenCalledWith(
+          "les valeurs de min et max doivent être différentes"
+        );
+      });
     });
   });
 });
