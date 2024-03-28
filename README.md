@@ -20,25 +20,23 @@ FizzForm utilise :
 
 Pour installer les dépendances, exécutez :
 
-\`\`\`bash
-npm i
-\`\`\`
+
+> npm i
+
 
 ## Lancement du programme
 
 Pour exécuter le programme :
 
-\`\`\`bash
-npm start
-\`\`\`
+
+> npm start
 
 ## Exécution des tests
 
 Pour exécuter les tests unitaires :
 
-\`\`\`bash
-npm test
-\`\`\`
+
+> npm test
 
 ## Couverture de code
 
@@ -48,9 +46,9 @@ La couverture de code est automatiquement générée avec `npm test`. Un rapport
 
 Pour exécuter les tests de mutation :
 
-\`\`\`bash
-npm run test:mutation
-\`\`\`
+
+> npm run test:mutation
+
 
 Il est nécessaire que les tests soient au vert pour effectuer les tests de mutation.
 
