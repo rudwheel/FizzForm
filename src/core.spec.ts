@@ -63,7 +63,7 @@ describe("generateRandomList", () => {
     const list = generateRandomList(size, min, max);
     expect(list.length).toBe(0);
   });
-  
+
   describe("processList", () => {
     it('should return an array of "Gestform" when the numbers are divisible by both 3 and 5', () => {
       expect(processList([15, 30, 45])).toEqual([
@@ -96,6 +96,27 @@ describe("generateRandomList", () => {
 
     it("should return an empty array when the input array is empty", () => {
       expect(processList([])).toEqual([]);
+    });
+  });
+
+  //Tests pour tuer les mutants.
+  // test pour verifier bon affichage du message d'erreur si borne inversées.
+  describe("generateRandomList", () => {
+    // Testez un cas spécifique où min est supérieur à max
+    it("should log a message when min is greater than max", () => {
+      // Arrange
+      // Créez un espion pour la console.log afin de pouvoir vérifier si elle a été appelée correctement
+      const consoleSpy = jest.spyOn(console, "log");
+
+      // Act
+      // Appellez la fonction avec min supérieur à max
+      generateRandomList(10, 20, 10);
+
+      // Assert
+      // Vérifiez que la console.log a été appelée avec le bon message
+      expect(consoleSpy).toHaveBeenCalledWith(
+        "les valeurs de min et max sont inversées"
+      );
     });
   });
 });
