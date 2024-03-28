@@ -12,10 +12,15 @@ describe("analyzeNumber", () => {
     expect(analyzeNumber(6)).toBe("Geste");
     expect(analyzeNumber(9)).toBe("Geste");
   });
-  
+
   it('should return "Forme" when the number is divisible by 5 but not by 3', () => {
     expect(analyzeNumber(5)).toBe("Forme");
     expect(analyzeNumber(10)).toBe("Forme");
     expect(analyzeNumber(20)).toBe("Forme");
+  });
+  it("should return the number as a string when it is not divisible by either 3 or 5", () => {
+    expect(analyzeNumber(2)).toBe("2");
+    expect(analyzeNumber(7)).toBe("7");
+    expect(analyzeNumber(11)).toBe("11");
   });
 });
