@@ -1,4 +1,4 @@
-import { analyzeNumber, generateRandomList } from "./core";
+import { analyzeNumber, generateRandomList, processList } from "./core";
 
 describe("analyzeNumber", () => {
   it('should return "Gestform" when the number is divisible by both 3 and 5', () => {
@@ -62,5 +62,40 @@ describe("generateRandomList", () => {
     const max = -50;
     const list = generateRandomList(size, min, max);
     expect(list.length).toBe(0);
+  });
+  
+  describe("processList", () => {
+    it('should return an array of "Gestform" when the numbers are divisible by both 3 and 5', () => {
+      expect(processList([15, 30, 45])).toEqual([
+        "Gestform",
+        "Gestform",
+        "Gestform",
+      ]);
+    });
+
+    it('should return an array of "Geste" when the numbers are divisible by 3 but not by 5', () => {
+      expect(processList([3, 6, 9])).toEqual(["Geste", "Geste", "Geste"]);
+    });
+
+    it('should return an array of "Forme" when the numbers are divisible by 5 but not by 3', () => {
+      expect(processList([5, 10, 20])).toEqual(["Forme", "Forme", "Forme"]);
+    });
+
+    it("should return an array of numbers as strings when they are not divisible by either 3 or 5", () => {
+      expect(processList([2, 7, 11])).toEqual(["2", "7", "11"]);
+    });
+
+    it('should return an array with a mix of "Gestform", "Geste", "Forme", and numbers as strings when the input array is a mix of numbers', () => {
+      expect(processList([15, 3, 5, 2])).toEqual([
+        "Gestform",
+        "Geste",
+        "Forme",
+        "2",
+      ]);
+    });
+
+    it("should return an empty array when the input array is empty", () => {
+      expect(processList([])).toEqual([]);
+    });
   });
 });

@@ -48,3 +48,14 @@ export function generateRandomList(
     () => Math.floor(Math.random() * (max - min + 1)) + min
   );
 }
+/**
+ * Traite une liste de nombres en utilisant la fonction analyzeNumber sur chaque nombre.
+ *
+ * @param numbers - La liste de nombres à traiter.
+ * @returns Une nouvelle liste de chaînes de caractères, où chaque chaîne est le résultat de l'application de la fonction analyzeNumber sur le nombre correspondant de la liste d'entrée.
+ */
+export function processList(numbers: number[]): string[] {
+  // Utilise la méthode map pour appliquer la fonction analyzeNumber à chaque nombre de la liste d'entrée.
+  // Retourne la nouvelle liste de chaînes de caractères.
+  return numbers.map(analyzeNumber);
+}
