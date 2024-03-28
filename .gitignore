@@ -1,3 +1,8 @@
 node_modules
 **/.DS_Store
 reports
+reports/coverage/lcov.info
+reports/coverage/lcov-report/main.ts.html
+reports/coverage/lcov-report/index.html
+reports/coverage/coverage-final.json
+reports/coverage/clover.xml
