@@ -119,4 +119,21 @@ describe("generateRandomList", () => {
       );
     });
   });
+  describe("generateRandomList", () => {
+    it("should generate numbers within the exact range", () => {
+      // Arrange
+      const size = 1000;
+      const min = 10;
+      const max = 20;
+
+      // Act
+      const result = generateRandomList(size, min, max);
+
+      // Assert
+      const actualMin = Math.min(...result);
+      const actualMax = Math.max(...result);
+      expect(actualMin).toBe(min);
+      expect(actualMax).toBe(max);
+    });
+  });
 });
