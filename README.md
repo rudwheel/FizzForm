@@ -53,3 +53,13 @@ Pour exécuter les tests de mutation :
 Il est nécessaire que les tests soient au vert pour effectuer les tests de mutation.
 
 Le rapport de mutation sera situé dans `reports/mutation/index.html`.
+
+## Structure du Code
+
+- **core.ts** : Contient le code métier du programme.
+- **main.ts** : Constitue le point d'entrée de l'application, se chargeant d'appeler les fonctions métier et d'afficher les résultats.
+- **core.spec.ts** et **main.spec.ts** : Contiennent les tests unitaires associés à `core.ts` et `main.ts`, respectivement.
+
+## Documentation Supplémentaire
+
+Pour une exploration plus détaillée de la réflexion derrière le développement de FizzForm, vous pouvez consulter le document "Fil de pensée" disponible [ici](https://github.com/rudwheel/FizzForm/tree/main/doc).
