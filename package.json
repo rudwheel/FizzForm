@@ -9,8 +9,8 @@
     "test:mutation": "stryker run"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^7.1.1",
-    "@stryker-mutator/jest-runner": "^7.1.1",
+    "@stryker-mutator/core": "^9.0.1",
+    "@stryker-mutator/jest-runner": "^9.0.1",
     "@types/jest": "^28.1.6",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
